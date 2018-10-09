@@ -27,16 +27,16 @@ def insert_department(department_id,cur):
 
 def insert_faculty(faculty_id,cur):
     """ insert a new student into the faculty table """
-    sql = """INSERT INTO public."Faculty"("Faculty_Id", "Faculty_Name", "Qualification", "Salary", "Contact_Info", "Email_Id", "Department_Id", "Faculty_College_Id")VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
+    sql = """INSERT INTO public."Faculty"("Faculty_Id", "Faculty_Name", "Qualification", "Salary", "Contact_Info", "Email_Id", "Department_Id")VALUES (%s, %s, %s, %s, %s, %s, %s)"""
     # execute the INSERT statement
     departmentCollegeId = getIds.get_random_department_id(cur)
     facultyCollegeId = syntheticDataGen.getStudentId()
     facultyName = syntheticDataGen.getProgram()
     qualif = syntheticDataGen.getCity()
     salary = syntheticDataGen.getComputedScore()
-    facultyContact = syntheticDataGen.getAddress() 
+    facultyContact = syntheticDataGen.getAddress()[:45]
     facultyEmail = syntheticDataGen.getEmail()
-    cur.execute(sql, (faculty_id, facultyName, qualif, salary, facultyContact, facultyEmail, departmentCollegeId, facultyCollegeId ))
+    cur.execute(sql, (faculty_id, facultyName, qualif, salary, facultyContact, facultyEmail, departmentCollegeId ))
 
 def insert_course(course_id,cur):
     """ insert a new student into the faculty table """
@@ -45,7 +45,7 @@ def insert_course(course_id,cur):
     departmentCollegeId = getIds.get_random_department_id(cur)
     instructorid = getIds.get_random_instructor_id(cur)
     courseCollegeId = getIds.get_random_department_id(cur)
-    year = syntheticDataGen.getCreatedTime()
+    year = syntheticDataGen.getYear()
     courseName = syntheticDataGen.getProgram()
     capacity = syntheticDataGen.getComputedScore()
     credit = syntheticDataGen.getsingleDigit()

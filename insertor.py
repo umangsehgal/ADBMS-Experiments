@@ -5,7 +5,7 @@ import getIds
 import executeQuery
 
 insertRange = 10
-conn = psycopg2.connect("host=imt-563-db-hnsu.cs3bxymxzkz8.us-east-2.rds.amazonaws.com dbname=hnsu563db user=hnsu563 password=alohomora")
+conn = psycopg2.connect("host=imt-563-db-hnsu.cs3bxymxzkz8.us-east-2.rds.amazonaws.com dbname=hnsu563db user=hnsu563 password=")
 cur = conn.cursor()
 
 for i in range(insertRange):

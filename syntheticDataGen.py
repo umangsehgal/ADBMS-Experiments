@@ -27,6 +27,9 @@ def getName():
 def getStudentId():
     return random.randint(10000, 99999)
 
+def getYear():
+    return random.randint(1900, 2100)
+
 def getTimeZone():
     return fake.timezone()
 
