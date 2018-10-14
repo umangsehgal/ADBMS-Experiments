@@ -4,8 +4,8 @@ import psycopg2
 import getIds
 import executeQuery
 
-insertRange = 10
-conn = psycopg2.connect("host=imt-563-db-hnsu.cs3bxymxzkz8.us-east-2.rds.amazonaws.com dbname=hnsu563db user=hnsu563 password=")
+insertRange = 1
+conn = psycopg2.connect("host=imt-563-db-hnsu.cs3bxymxzkz8.us-east-2.rds.amazonaws.com dbname=hnsu563db user=hnsu563 password=sehgalu123")
 cur = conn.cursor()
 
 for i in range(insertRange):
@@ -56,7 +56,7 @@ for i in range(insertRange):
     else:
         executeQuery.insert_reg(reg_id_current+1,cur)
 
-
+print("Inserted")
 
 conn.commit()
 cur.close() 
