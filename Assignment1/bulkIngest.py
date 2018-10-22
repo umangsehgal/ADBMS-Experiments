@@ -78,15 +78,15 @@ for i in range(0,len(rangeItems)):
     
 
 #NORMAL INSERT
-# writeInsertTime(9000,10000)
+writeInsertTime(0,10000)
 
-# print("Serial Dict:")
-# print(time_dict_serial)
+print("Serial Dict:")
+print(time_dict_serial)
 print("Bulk Dict:")
 print(time_dict_bulk)
 
 
-with open('experiemnt_results.csv', mode='w') as resultFile:
+with open('experiemnt_results_unclustered.csv', mode='w') as resultFile:
     writer = csv.writer(resultFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     writer.writerow(['Number of Records','Time Duration'])
     for k,v in time_dict_bulk.items(): 
